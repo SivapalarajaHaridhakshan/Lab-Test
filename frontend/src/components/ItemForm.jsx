@@ -8,6 +8,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       price: "",
       description: "",
       imageUrl: "",
+      manufactureDate: "", 
     }
   );
 
@@ -21,6 +22,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
     onSubmit({
       ...formData,
       price: Number(formData.price),
+      
     });
   };
 
@@ -42,6 +44,19 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
         onChange={handleChange}
         required
       />
+
+      {
+    }
+      <label>Manufacture Date</label>
+      <input
+        type="date"
+        name="manufactureDate"
+        value={formData.manufactureDate ? formData.manufactureDate.split('T')[0] : ""}
+        onChange={handleChange}
+        required
+      />
+      {
+      }
 
       <label>Description</label>
       <textarea
